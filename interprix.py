@@ -74,4 +74,5 @@ if st.button("Prédire le prix"):
     input_data = np.array([[area, bathrooms, stories, airconditioning, parking, bedrooms, furnishingstatus, prefarea, mainroad, guestroom]])
     predicted_price = model.predict(input_data)[0]
     
-    st.success(f"Prix estimé : {predicted_price:,.2f} €")
+    st.info(f"Prix estimé : {predicted_price:,.2f} €")
+
