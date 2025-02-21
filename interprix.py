@@ -39,7 +39,7 @@ def add_bg_from_local(image_file):
         st.error("L'image d'arrière-plan est introuvable. Vérifiez le fichier 'nyk.jpg'.")
 
 # --- APPLIQUER L'IMAGE EN ARRIÈRE-PLAN ---
-add_bg_from_local("D:\\nyk.jpg")
+add_bg_from_local("nyk.jpg")
 
 # --- TITRE ---
 st.markdown("<h1 style='text-align: center; color: white;'>Prédiction des Prix des Maisons 🏡</h1>", unsafe_allow_html=True)
