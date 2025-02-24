@@ -6,6 +6,7 @@ import joblib
 import numpy as np
 import base64
 
+
 # Charger le modèle XGBoost
 model = joblib.load("model_xgboost.pkl")
 
@@ -17,25 +18,19 @@ def add_bg_from_local(image_file):
         page_bg_img = f"""
         <style>
         .stApp {{
-            background-image: url("data:image/jpeg;base64,{encoded_string}");
+            background-image: url("data:image/png;base64,{encoded_string}");
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            background-repeat: no-repeat;
         }}
-        .stButton>button {{
-            background-color: #003366;
-            color: white;
-            font-size: 18px;
-            padding: 12px 25px;
+        .transparent-box {{
+            background: rgba(255, 255, 255, 0.3);
+            padding: 2rem;
             border-radius: 10px;
-            border: none;
-            cursor: pointer;
-            transition: 0.3s;
-        }}
-        .stButton>button:hover {{
-            background-color: #0055AA;
-            transform: scale(1.05);
+            width: 50%;
+            margin: auto;
+            text-align: center;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
         }}
         </style>
         """
@@ -55,17 +50,7 @@ st.markdown("""
     <p style="color: white;">Cette interface permet de prédire les prix des maisons à New York en fonction de plusieurs critères.</p>
     <p style="color: white;">Pour mieux comprendre notre approche, vous pouvez consulter notre rapport ci-dessous.</p>
     <a href="rapport predictin des prix des maison.pdf" download>
-        <button style="
-            background-color: #003366;
-            color: white;
-            font-size: 16px;
-            padding: 10px 20px;
-            border-radius: 8px;
-            border: none;
-            cursor: pointer;
-            transition: 0.3s;">
-            📥 Télécharger le Rapport
-        </button>
+        <button class="download-button">📥 Télécharger le Rapport</button>
     </a>
 </div>
 """, unsafe_allow_html=True)
@@ -83,6 +68,7 @@ airconditioning = st.radio("Climatisation", ["yes", "no"])
 prefarea = st.radio("Quartier résidentiel privilégié ?", ["yes", "no"])
 mainroad = st.radio("Proximité de la route principale", ["yes", "no"])
 guestroom = st.radio("Présence d'une chambre d'amis", ["yes", "no"])
+
 
 # Encodage des variables catégoriques
 airconditioning = 1 if airconditioning == "yes" else 0
