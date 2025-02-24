@@ -61,8 +61,6 @@ bathrooms = st.selectbox("Nombre de salles de bain", [1, 2, 3, 4])
 stories = st.selectbox("Nombre d'étages", [1, 2, 3, 4])
 bedrooms = st.selectbox("Nombre de chambres", [1, 2, 3, 4, 5, 6])
 parking = st.selectbox("Nombre de places de parking", [0, 1, 2, 3])
-
-# Variable catégorielle (Meublé, Semi-meublé, Non-meublé)
 furnishingstatus = st.selectbox("État du mobilier", ["semi-furnished", "unfurnished", "furnished"])
 
 # Variables catégoriques (Oui/Non)
