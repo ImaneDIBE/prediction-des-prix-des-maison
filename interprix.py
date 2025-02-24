@@ -44,6 +44,17 @@ add_bg_from_local("nyk.jpg")
 # --- TITRE ---
 st.markdown("<h1 style='text-align: center; color: white;'>Prédiction des Prix des Maisons 🏡</h1>", unsafe_allow_html=True)
 
+# --- BOÎTE D’INTRODUCTION ---
+st.markdown("""
+<div class="header-box">
+    <p style="color: white;">Cette interface permet de prédire les prix des maisons à New York en fonction de plusieurs critères.</p>
+    <p style="color: white;">Pour mieux comprendre notre approche, vous pouvez consulter notre rapport ci-dessous.</p>
+    <a href="rapport predictin des prix des maison.pdf" download>
+        <button class="download-button">📥 Télécharger le Rapport</button>
+    </a>
+</div>
+""", unsafe_allow_html=True)
+
 # Champs de saisie pour l'utilisateur
 area = st.number_input("Surface en m²", min_value=10, max_value=1000, step=1)
 bathrooms = st.selectbox("Nombre de salles de bain", [1, 2, 3, 4])
@@ -75,4 +86,3 @@ if st.button("Prédire le prix"):
     predicted_price = model.predict(input_data)[0]
     
     st.info(f"Prix estimé : {predicted_price:,.2f} $")
-
