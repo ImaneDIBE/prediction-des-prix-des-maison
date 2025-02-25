@@ -18,12 +18,12 @@ def add_bg_from_local(image_file):
         page_bg_img = f"""
         <style>
         .stApp {{
-            background: url("data:image/jpeg;base64,{encoded_string}") no-repeat center center fixed;
+            background-image: url("data:image/png;base64,{encoded_string}");
             background-size: cover;
-            height: 100vh;  /* Prend toute la hauteur de l'écran */
-            width: 100vw;   /* Prend toute la largeur de l'écran */
-            margin: 0;
-            padding: 0;
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-attachment: fixed;
+            height: 100vh;
         }}
         </style>
         """
