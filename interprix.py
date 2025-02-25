@@ -19,9 +19,10 @@ def add_bg_from_local(image_file):
         <style>
         .stApp {{
             background-image: url("data:image/png;base64,{encoded_string}");
-            background-size: cover;
+            background-size: 100% 100%;
             background-position: center;
             background-attachment: fixed;
+            background-repeat: no-repeat;
         }}
         .transparent-box {{
             background: rgba(255, 255, 255, 0.3);
