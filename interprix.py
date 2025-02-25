@@ -24,15 +24,6 @@ def add_bg_from_local(image_file):
             background-attachment: fixed;
             background-repeat: no-repeat;
         }}
-        .transparent-box {{
-            background: rgba(255, 255, 255, 0.3);
-            padding: 2rem;
-            border-radius: 10px;
-            width: 50%;
-            margin: auto;
-            text-align: center;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
-        }}
         </style>
         """
         st.markdown(page_bg_img, unsafe_allow_html=True)
