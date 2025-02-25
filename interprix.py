@@ -46,12 +46,15 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- BOUTON DE TÉLÉCHARGEMENT ---
-if st.button("📥 Télécharger le Rapport"):
+download_button_displayed = False  
+
+if st.button("📥 Télécharger le Rapport") and not download_button_displayed:
     with open("rapport_prediction_des_prix_des_maison.pdf", "rb") as file:
         st.download_button(label="📥 Télécharger le Rapport", data=file, file_name="rapport_prediction_des_prix_des_maisons.pdf", mime="application/pdf")
+        download_button_displayed = True  # Assurer que le bouton ne s'affiche qu'une seule fois
 
 # Champs de saisie pour l'utilisateur
-area = st.number_input("Surface en m²", min_value=10, max_value=1000, step=1)
+area = st.number_input("Surface en m²", min_value=10, max_value=20000, step=1)
 bathrooms = st.selectbox("Nombre de salles de bain", [1, 2, 3, 4])
 stories = st.selectbox("Nombre d'étages", [1, 2, 3, 4])
 bedrooms = st.selectbox("Nombre de chambres", [1, 2, 3, 4, 5, 6])
