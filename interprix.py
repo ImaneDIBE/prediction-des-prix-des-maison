@@ -47,8 +47,8 @@ st.markdown("""
 
 # --- BOUTON DE TÉLÉCHARGEMENT ---
 if st.button("📥 Télécharger le Rapport"):
-    with open("rapport predictin des prix des maison.pdf", "rb") as file:
-        st.download_button(label="📥 Télécharger le Rapport", data=file, file_name="rapport_predictin_des_prix_des_maisons.pdf", mime="application/pdf")
+    with open("rapport_prediction_des_prix_des_maison.pdf", "rb") as file:
+        st.download_button(label="📥 Télécharger le Rapport", data=file, file_name="rapport_prediction_des_prix_des_maisons.pdf", mime="application/pdf")
 
 # Champs de saisie pour l'utilisateur
 area = st.number_input("Surface en m²", min_value=10, max_value=1000, step=1)
