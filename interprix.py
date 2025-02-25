@@ -46,12 +46,13 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- BOUTON DE TÉLÉCHARGEMENT ---
-download_button_displayed = False  
-
-if st.button("📥 Télécharger le Rapport") and not download_button_displayed:
-    with open("rapport_prediction_des_prix_des_maison.pdf", "rb") as file:
-        st.download_button(label="📥 Télécharger le Rapport", data=file, file_name="rapport_prediction_des_prix_des_maisons.pdf", mime="application/pdf")
-        download_button_displayed = True  # Assurer que le bouton ne s'affiche qu'une seule fois
+with open("rapport_prediction_des_prix_des_maison.pdf", "rb") as file:
+    st.download_button(
+        label="📥 Télécharger le Rapport", 
+        data=file, 
+        file_name="rapport_prediction_des_prix_des_maisons.pdf", 
+        mime="application/pdf"
+    )
 
 # Champs de saisie pour l'utilisateur
 area = st.number_input("Surface en m²", min_value=10, max_value=20000, step=1)
