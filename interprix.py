@@ -44,16 +44,18 @@ add_bg_from_local("nyk.jpg")
 # --- TITRE ---
 st.markdown("<h1 style='text-align: center; color: white;'>Prédiction des Prix des Maisons 🏡</h1>", unsafe_allow_html=True)
 
-# --- BOÎTE D’INTRODUCTION ---
+# --- INTRODUCTION ---
 st.markdown("""
 <div class="header-box">
     <p style="color: white;">Cette interface permet de prédire les prix des maisons à New York en fonction de plusieurs critères.</p>
     <p style="color: white;">Pour mieux comprendre notre approche, vous pouvez consulter notre rapport ci-dessous.</p>
-    <a href="rapport predictin des prix des maison.pdf" download>
-        <button class="download-button">📥 Télécharger le Rapport</button>
-    </a>
 </div>
 """, unsafe_allow_html=True)
+
+# --- BOUTON DE TÉLÉCHARGEMENT ---
+if st.button("📥 Télécharger le Rapport"):
+    with open("rapport_predictin_des_prix_des_maisons.pdf", "rb") as file:
+        st.download_button(label="📥 Télécharger le Rapport", data=file, file_name="rapport_predictin_des_prix_des_maisons.pdf", mime="application/pdf")
 
 # Champs de saisie pour l'utilisateur
 area = st.number_input("Surface en m²", min_value=10, max_value=1000, step=1)
