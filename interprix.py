@@ -25,9 +25,6 @@ def add_bg_from_local(image_file):
             margin: 0;
             padding: 0;
         }}
-        .st-emotion-cache-1v0mbdj {{
-            background-color: transparent !important; /* Supprime la bande bleue */
-        }}
         </style>
         """
         st.markdown(page_bg_img, unsafe_allow_html=True)
