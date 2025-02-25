@@ -47,7 +47,7 @@ st.markdown("""
 
 # --- BOUTON DE TÉLÉCHARGEMENT ---
 if st.button("📥 Télécharger le Rapport"):
-    with open("rapport_predictin_des_prix_des_maisons.pdf", "rb") as file:
+    with open("rapport predictin des prix des maison.pdf", "rb") as file:
         st.download_button(label="📥 Télécharger le Rapport", data=file, file_name="rapport_predictin_des_prix_des_maisons.pdf", mime="application/pdf")
 
 # Champs de saisie pour l'utilisateur
